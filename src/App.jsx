@@ -1,21 +1,28 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Registration from "./components/Registration";
-import TransferOwnership from "./components/TransferOwnership";
-import "./App.css";
-import Home from "./pages/Home";
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Registration from './components/Registration';
+import TransferOwnership from './components/TransferOwnership';
+import './App.css';
+import Home from './pages/Home';
+import CrossChain from './pages/CrossChain';
 
 const App = () => {
   return (
     <BrowserRouter>
-      <main>
+      <main className="bg-gradient min-h-screen">
         <div className="main">
           <div className="gradient" />
         </div>
         <div className="app">
           <Routes>
-            <Route path="/" element={<Home/>} />
-            <Route path="/registration" element={<Registration/>} />
-            <Route path="/transfer-ownership" element={<TransferOwnership/>} />
+            <Route path="/" element={<Home />} />
+            <Route path="/registration" element={<Registration />} />
+            <Route path="/transfer-ownership" element={<TransferOwnership />} /> 
+            <Route
+              path="/cross-chain"
+              element={
+                <CrossChain/>
+              }
+            />
           </Routes>
         </div>
       </main>

@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { SignedIn, SignedOut, SignInButton } from "@clerk/clerk-react";
+
 const Demo = () => {
   const navigate = useNavigate();
 
@@ -29,10 +30,16 @@ const Demo = () => {
           >
             Transfer Ownership
           </button>
+          {/* <button
+            className="p-3 w-[400px] rounded-xl bg-gradient-to-r from-amber-500 via-orange-600 to-yellow-500 transition-all font-semibold"
+            onClick={handleOwnershipClick}
+          >
+            <span className="text-md font-semibold  uppercase text-white">Cross Chain Asset Transfer</span>
+          </button> */}
         </SignedIn>
         <SignedOut>
           <SignInButton className="border bg-gray-300 p-3 w-[400px] rounded-xl hover:bg-black hover:text-white transition-all font-semibold">
-          <button>Get Started</button>
+            <button>Get Started</button>
           </SignInButton>
         </SignedOut>
       </section>
