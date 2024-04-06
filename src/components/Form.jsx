@@ -1,4 +1,5 @@
 import { Formik, Field, Form, ErrorMessage } from 'formik'
+import { useState } from 'react'
 import * as Yup from 'yup'
 
 const FormikForm = () => {
@@ -26,7 +27,13 @@ const FormikForm = () => {
     console.log(values)
     setSubmitting(false)
   }
-
+  const [name, setName] = useState("");
+  const [contact, setContact] = useState();
+  const [aadhar, setAadhar] = useState();
+  const [address, setAddress] = useState("");
+  const [desc, setDesc] = useState("");
+  const [title, setTitle] = useState("");
+  const [ulpin, setUlpin] = useState();
   return (
     <div>
       <h1 className='orange_gradient text-5xl font-semibold text-center mt-14 pb-4'>
@@ -43,7 +50,7 @@ const FormikForm = () => {
           propertyAddress: '',
           propertyDescription: '',
           deedOrTitle: '',
-          landSurvey: '',
+          ulpin: '',
           additionalDocumentation: '',
         }}
         validationSchema={validationSchema}
@@ -58,6 +65,8 @@ const FormikForm = () => {
                 type='text'
                 id='fullName'
                 required
+                value={name}
+                onChange={(e) => setName(e.target.value)}
               />
               <ErrorMessage name='fullName' component='div' />
             </div>
@@ -67,8 +76,10 @@ const FormikForm = () => {
               <Field
                 name='contact'
                 type='text'
+                value={contact}
                 id='contact'
                 required
+                onChange={(e) => setContact(e.target.value)}
               />
               <ErrorMessage name='contact' component='div' />
             </div>
@@ -79,7 +90,9 @@ const FormikForm = () => {
                 name='aadharCard'
                 type='text'
                 id='aadharCard'
+                value={aadhar}
                 required
+                onChange={(e) => setAadhar(e.target.value)}
               />
               <ErrorMessage name='aadharCard' component='div' />
             </div>
@@ -89,8 +102,10 @@ const FormikForm = () => {
               <Field
                 name='propertyAddress'
                 type='text'
+                value={address}
                 id='propertyAddress'
                 required
+                onChange={(e) => setAddress(e.target.value)}
               />
               <ErrorMessage name='propertyAddress' component='div' />
             </div>
@@ -101,7 +116,9 @@ const FormikForm = () => {
                 name='propertyDescription'
                 type='text'
                 id='propertyDescription'
+                value={desc}
                 required
+                onChange={(e) => setDesc(e.target.value)}
               />
               <ErrorMessage name='propertyDescription' component='div' />
             </div>
@@ -112,27 +129,31 @@ const FormikForm = () => {
                 name='deedOrTitle'
                 type='text'
                 id='deedOrTitle'
+                value={title}
                 required
+                onChange={(e) => setTitle(e.target.value)}
               />
               <ErrorMessage name='deedOrTitle' component='div' />
             </div>
 
             <div className='flex flex-col mb-4'>
-              <label htmlFor='landSurvey'>Ownership Proof: Land Survey</label>
+              <label htmlFor='ulpin'>ULPIN</label>
               <Field
-                name='landSurvey'
-                type='text'
-                id='landSurvey'
+                name='ulpin'
+                type='number'
+                id='ulpin'
                 required
+                value={ulpin}
+                onChange={(e) => setUlpin(e.target.value)}
               />
-              <ErrorMessage name='landSurvey' component='div' />
+              <ErrorMessage name='ulpin' component='div' />
             </div>
 
             <div className='flex flex-col mb-4'>
               <label htmlFor='additionalDocumentation'>Additional Documentation</label>
               <Field
                 name='additionalDocumentation'
-                type='text'
+                type='file'
                 id='additionalDocumentation'
                 required
               />
