@@ -17,6 +17,7 @@
     "@openzeppelin/contracts": "^5.0.2",
     "@reduxjs/toolkit": "^1.9.5",
     "@wormhole-foundation/wormhole-connect": "^0.2.7",
+    "firebase": "^10.10.0",
     "flowbite-react": "^0.8.0",
     "formik": "^2.4.5",
     "react": "^18.2.0",

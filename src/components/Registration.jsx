@@ -4,7 +4,7 @@ import { useState } from "react";
 import Web3 from "web3";
 import { Toaster, toast } from "react-hot-toast";
 // import AceHacks from "./artifacts/contracts/registration.sol/AceHacks.json";
-import AceHacks from "C:/Users/Atharva/OneDrive/Desktop/ace-hacks-landchain - Copy/artifacts/contracts/registration.sol/AceHacks.json"
+import AceHacks from '../../artifacts/contracts/registration.sol/AceHacks.json';
 const FormikForm = () => {
   const validationSchema = Yup.object({
     fullName: Yup.string().required("Full Name is required"),
