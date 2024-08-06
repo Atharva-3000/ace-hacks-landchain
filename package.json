@@ -17,6 +17,7 @@
     "@openzeppelin/contracts": "^5.0.2",
     "@reduxjs/toolkit": "^1.9.5",
     "@wormhole-foundation/wormhole-connect": "^0.2.7",
+    "chai": "^4.3.7",
     "firebase": "^10.10.0",
     "flowbite-react": "^0.8.0",
     "formik": "^2.4.5",
@@ -38,7 +39,7 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.3.4",
-    "hardhat": "^2.22.2",
+    "hardhat": "^2.22.7",
     "postcss": "^8.4.23",
     "tailwindcss": "^3.3.1",
     "vite": "^4.3.0"

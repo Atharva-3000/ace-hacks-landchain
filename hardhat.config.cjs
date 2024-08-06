@@ -1,17 +1,30 @@
-/**
- * @type import('hardhat/config').HardhatUserConfig
- */
-require("@nomiclabs/hardhat-waffle");
-
-const fs = require('fs');
-const { projectId,mnemonic } = JSON.parse(fs.readFileSync('./secrets.json', 'utf-8'));
+require("dotenv").config();
+require("@nomicfoundation/hardhat-toolbox");
 
 module.exports = {
-  solidity: "0.8.20",
+  solidity: "0.8.19",
+  paths: {
+    artifacts: "./src",
+  },
   networks: {
-    polygon_testnet: {
-      url: `https://polygon-mumbai.infura.io/v3/${projectId}`,
-      accounts: { mnemonic: mnemonic }
-    }
-  }
+    opencampus: {
+      url: `https://rpc.open-campus-codex.gelato.digital/`,
+      accounts: [process.env.ACCOUNT_PRIVATE_KEY],
+    },
+  },
+  etherscan: {
+    apiKey: {
+      opencampus: "NX9A7MBREVFU4BFEGVKRSE7IEKAX2Z4FCI",
+    },
+    customChains: [
+      {
+        network: "opencampus",
+        chainId: 656476,
+        urls: {
+          apiURL: "https://opencampus-codex.blockscout.com/api",
+          browserURL: "https://opencampus-codex.blockscout.com",
+        },
+      },
+    ],
+  },
 };
